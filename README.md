@@ -10,7 +10,11 @@ Page 13 contains something that you can print on the backside of the cards.
 
 Feel free to print them out and use them to make big talk.
 
+The deck uses [Lemon Yellow Sun](https://www.dafont.com/dk-lemon-yellow-sun.font) and [Christmas Time](https://www.dafont.com/christmas-time-2.font) for the content and the logo. Both are free for personal use.
 
-##Codepen.io
-After a while I realized that you don't need to print out a deck of cards and carry them around. You just need something simple that can throw random questions at you. And so I built a [codepen](https://codepen.io/tejasanilshah/full/gOpaLjj) that shows random questions to use.
-It's a work in progress.
+
+## [Codepen](https://codepen.io/tejasanilshah/full/gOpaLjj)
+
+After a while I realized that you don't need to print out a deck of cards and carry them around. 
+
+You just need something simple that can throw random questions at you, so I built a codepen that shows random questions to use.
