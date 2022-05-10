@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+.card {
+  margin: 40px auto 25px auto;
+}
+.question {
+  font-size: 20px;
+  font-color: grey;
+  min-height: 4rem;
+  margin: 10px auto;
+}
+
+.col-sm-8 > .card > .card-body > .question{
+  min-height: 5rem;
+}
+
+.col-12 > .card > .card-body > .question{
+  min-height: 7rem;
+}
+
+#card-title {
+  text-transform: uppercase;
+  margin: auto;
+}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+questions = [
+'Do you believe in Karma?',
+'What makes you feel alive?',
+'Do you think children should be taught how to cook?',
+'Can you cook?',
+'What should be taught in schools?',
+'Which piece of music moves you the most?',
+'Do you believe in God?',
+'What is the closest to your heart?',
+'Do you have any ideas on gender equality?',
+'Where would you have liked to spend your childhood?',
+'Do you think equality and justice are one and the same?',
+'What do you think about religious reforms?',
+'In your opinion which book should everybody in the universe read?',
+'If you could change one thing about yourself overnight, what would it be?',
+'What kind of life is a life worth living?',
+'What\'s on your bucket list?',
+'If given all the resources, where would you like to go in the entire world and why?',
+'Should cat videos be banned from YouTube?',
+'What is your biggest fear? Do you plan to confront it?',
+'Invisibility or the ability to fly?',
+'What do you think is the right age to get married?',
+'What do you think about LGBTQ?',
+'Marijuana(weed) is slowly being legalised in the USA, the world might soon follow. What do you think about it?',
+'What is your idea of a perfect holiday?',
+'Lot of artists take drugs before their performance, do you think it has become a neccessity to get their real potential out?',
+'What do you enjoy doing the most?',
+'When was the last time you cried?',
+'Gandhiji said be the change you want to see. What is the change you want to be?',
+'If you could be God for a day what would you do?',
+'What is one thing about you that you wouldn\'t want to change?',
+'If you find out that you have 1 month to live, what would you do?',
+'Do you believe in meditation?',
+'What do you think about death?',
+'What is something that you wouldn\'t even wish upon your enemies?',
+'What makes you a badass?',
+'Do you believe in planning your future or do you prefer going with the flow?',
+'If given a chance to change a decision that you\'ve taken in the past, what would you change?',
+'Should humans colonize other planets?',
+'Is there anything about your life that you want to change?',
+'How should a child be taught discipline?',
+'What is the one thing that you want to change about yourself?',
+'If you could pick a way to die, what would you choose?',
+'A house next to a library or one next to a pub?',
+'Where would you go for your honeymoon?',
+'What has been your biggest failure?',
+'What is a happy moment that you will always remember?',
+'What is something that you didn\'t learn from Google?',
+'What are some things that offend you?',
+'Are you a cat person or a dog person?',
+'What is the strangest thing you have ever eaten?',
+'Trip to outer space or bottom of the ocean?',
+'How do you define luck? And how do you think it defines your life?',
+'Do you think money can buy happiness?',
+'What is the craziest thing you\'ve ever done?',
+'What are the 3 things that can always be found in your bag?',
+'What do you think is the ulitmate waste of money?',
+'What is the best feeling in the world?',
+'Do you believe in reincarnation, rebirth etc? Why?',
+'Would you call yourself an introvert or an extrovert?',
+'Name two things you want to change in yourself.',
+'What is the right age to have kids?',
+'Do you remember any dream in particular?',
+'What are some life experiences that you think everyone should have?',
+'What do you think are some unfair advantages people are born with?',
+'If you could live a TV show, a book, or a movie, which one will it be?',
+'What is one book that every child should read?',
+'What is the most difficult thing that you\'ve done for someone you love?',
+'What is love?',
+'Can love and lust be seperated?',
+'For what do you feel the most grateful for in your life?',
+'If you could get away with a crime, what will it be?',
+'How will you spend a billion dollars?',
+'If you were to get a tattoo, what would it be?',
+'How do you want to be remembered?',
+'When was the happiest moment in your life?',
+'What was your dream job while growing up? How has it changed now?',
+'Who has been the most influential person in your life?',
+'Do you believe in soul mates?',
+'If you could master one skill you don\'t have right now, what will be it be?',
+'How will you define a "perfect" day?',
+'If you could speak another language, what will it be and why?',
+'What is the best thing someone has ever done for you?',
+'If you could time travel, will you go to your past or your future?',
+'What is the best meal you\'ve had recently?',
+'Would you rather be a jack of all trades or master of one?',
+'How would your best friends describe you?',
+'Would you rather live in the city or the woods?',
+'Are you a night person or a day person? Why?',
+'Any interesting story behind your name? Did you ever think of changing it?',
+'If you could invite any one person to dinner, who will it be?',
+'Airplanes, ships, trains or cars? Why?',
+'If asked to completely give up social media (including Whatsapp) would you be able to? Why or why not?',
+'Do you have a secret hunch about how you\'ll die?',
+'What has been the hardest phase of your life?',
+'If you could travel anywhere even through time, where would you go? Why?',
+'A luxury holiday or camping?',
+'If you had a door that could take you to any room, where will you go?',
+'Do you think there is a difference between a traveller and a tourist?',
+'What do you think is the purpose of life?',
+'Which sport do you follow or play? What you like about it?',
+'Do you ever feel lost?',
+'Do you think people were happier in the olden days?',
+'What is your earliest childhood memory?',
+'Have you thought of picking a resting place for your body after your death?'];
+document.onload = randomize();
+document.onload = openModal();
+function randomize(){
+  document.getElementById('q').innerHTML = questions[Math.floor(Math.random()*questions.length)]
+}
+
+function openModal(){
+  document.getElementById('info-btn').click();
+}
+</script>
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-6">
+      <div class="card text-center">
+        <div class="card-header">
+    <h6 id="card-title">Big question generator</h6>
+  </div>
+        <div class="card-body">
+    <p class="card-text align-self-center question" id="q">A luxury holiday or camping?</p>
+    <button type="button" class="btn btn-primary" onclick="randomize()">Random Question!</button>
+    <button type="button" class="btn btn-info" id="info-btn" data-toggle="modal" data-target="#infoModal">Info</button>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalTitle">Skip the small talk</h5>
+      </div>
+      <div class="modal-body">
+        <p>Most of us long to have deep and meaningful conversations, but the social conventions of the current time don't really facilitate these kind of interactions. The focus generally moves towards small talk, or things that simply fill the awkward silences when interacting with people. But by acknowledging the need for "big" talk, and having a way to get to the good questions allows us to skip the small talk.</p>
+A couple of pointers on how to use these questions:
+        <ol>
+          <li>Use these questions as starting points</li>
+          <li>Remember, one half of conversation is listening</li>
+        </ol>
+        <p>Inspired by <a href="https://www.makebigtalk.com/">The Big Talk Project by Kalina Silverman</a>.</p>
+<p>Although I loved the idea, I was disappointed by the design of the deck of cards that were being sold by the company. So I designed my own <a href="https://github.com/tejasanilshah/skip-the-small-talk/blob/master/Skip%20the%20small%20talk.pdf">deck</a> (~10 MB), and built this pen as an offshoot.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="modal-btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
